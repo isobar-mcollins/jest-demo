@@ -57,7 +57,7 @@ There are some issues with the withdraw method that can be abused, leading to in
     So that they done have infinite money
 
     Business rules:
-     - customers can still withdraw for money than they have
+     - customers can still withdraw more money than they have
      - prevent a withdraw if there are no funds available at the time of the transaction
 
 <hr>
