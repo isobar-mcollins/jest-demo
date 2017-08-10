@@ -5,15 +5,22 @@
 const BankAccount = function() {
   var balance = 0;
   const transactionLimit = 500;
+  const overdrawFee = 64;
 
   this.deposit = amount => {
     return balance += amount;
   };
 
-  this.withdraw = amount => {
+  this.withdraw = (amount) => {
+    var pendingBalance;
+
     if (amount <= transactionLimit) {
       if (this.getBalance() >= 0) {
-        return balance -= amount;
+        balance -= amount;
+
+        if (balance < 0) {
+          balance -= overdrawFee;
+        }
       }
 
     } else {
