@@ -18,6 +18,10 @@ Update the `package.json` test command like so to run test with a simple `npm t`
 ```
 
 ### Testing the deposit method
+
+_git:_ [start](https://github.com/isobar-mcollins/jest-demo/tree/feature/lesson-two-start)
+, [end](https://github.com/isobar-mcollins/jest-demo/tree/feature/lesson-two-finish)
+
 See `BankAccount.js`, there is a method `deposit` in there. Write a test to verify that the balance increases after depositing money to an account.
 
 **Hint:** follow the Arrange, Act Assert pattern to structure the test
