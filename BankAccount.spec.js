@@ -14,12 +14,26 @@ describe('a BankAccount', () => {
     expect(bankAccount.getBalance()).toBe(32);
   });
 
-  test('should allow withdraws', () => {
-    var bankAccount = new BankAccount();
-    bankAccount.withdraw(8);
+  describe('when withdrawing funds', ()=> {
+    test('should allow withdraws', () => {
+      var bankAccount = new BankAccount();
+      bankAccount.withdraw(8);
 
-    expect(BankAccount().withdraw).not.toBeUndefined();
-    expect(bankAccount.getBalance()).toBe(-8);
+      expect(BankAccount().withdraw).not.toBeUndefined();
+      expect(bankAccount.getBalance()).toBe(-8);
+    });
+
+    test('should limit how much can be withdrawn', () => {
+      var deniedAccount = new BankAccount();
+      var acceptableAccount = new BankAccount();
+
+      deniedAccount.withdraw(9999);
+      acceptableAccount.withdraw(250);
+
+      // @todo: catch TransactionError
+      expect(deniedAccount.getBalance()).toBe(0);
+      expect(acceptableAccount.getBalance()).toBe(-250);
+    });
   });
 
   // have a free passing test
