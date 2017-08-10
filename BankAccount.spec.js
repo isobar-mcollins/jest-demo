@@ -14,6 +14,12 @@ describe('a BankAccount', () => {
     expect(bankAccount.getBalance()).toBe(32);
   });
 
+  test('should allow withdraws', () => {
+    var bankAccount = new BankAccount();
+
+    expect(BankAccount().withdraw).not.toBeUndefined();
+  });
+
   // have a free passing test
   // write your own to test the `BankAccount.deposit` method
   test('should come with an example test', () =>{
