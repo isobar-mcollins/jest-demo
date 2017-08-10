@@ -44,3 +44,28 @@ If it were a user story, it would be:
     Business rules:
      - no penalty for a negative balance
      - can remove money even when no funds are available
+
+
+### Updating the withdraw method
+_git:_ [start](https://github.com/isobar-mcollins/jest-demo/tree/feature/lesson-four-start)
+, [end](https://github.com/isobar-mcollins/jest-demo/tree/feature/lesson-four-finish)
+
+There are some issues with the withdraw method that can be abused, leading to infinite monies. If they were a user story, they would be:
+
+    As a business
+    I want to stop customers from withdrawing money when no funds are available
+    So that they done have infinite money
+
+    Business rules:
+     - customers can still withdraw for money than they have
+     - prevent a withdraw if there are no funds available at the time of the transaction
+
+<hr>
+
+    As a business
+    I want to limit how much customers can withdraw in a transaction
+    So that we don't go broke
+
+    Business rules:
+     - limit to be hardcoded at $500
+     - transaction can be approved as long as there are funds in account
