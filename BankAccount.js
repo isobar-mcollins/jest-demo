@@ -9,6 +9,10 @@ const BankAccount = function() {
     return balance += amount;
   };
 
+  this.withdraw = amount => {
+    return balance -= amount;
+  };
+
   this.getBalance = () => {
     return balance;
   };

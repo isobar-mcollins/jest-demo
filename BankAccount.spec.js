@@ -16,8 +16,10 @@ describe('a BankAccount', () => {
 
   test('should allow withdraws', () => {
     var bankAccount = new BankAccount();
+    bankAccount.withdraw(8);
 
     expect(BankAccount().withdraw).not.toBeUndefined();
+    expect(bankAccount.getBalance()).toBe(-8);
   });
 
   // have a free passing test
