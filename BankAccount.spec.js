@@ -34,6 +34,14 @@ describe('a BankAccount', () => {
       expect(deniedAccount.getBalance()).toBe(0);
       expect(acceptableAccount.getBalance()).toBe(-250);
     });
+
+    test('should prevent withdrawing with negative funds' , () => {
+      var bankAccount = new BankAccount();
+      bankAccount.withdraw(20);
+      bankAccount.withdraw(40);
+
+      expect(bankAccount.getBalance()).toBe(-20);
+    });
   });
 
   // have a free passing test
