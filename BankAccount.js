@@ -12,7 +12,9 @@ const BankAccount = function() {
 
   this.withdraw = amount => {
     if (amount <= transactionLimit) {
-      return balance -= amount;
+      if (this.getBalance() >= 0) {
+        return balance -= amount;
+      }
 
     } else {
       // @todo: throw TransactionError('over transaction limit')

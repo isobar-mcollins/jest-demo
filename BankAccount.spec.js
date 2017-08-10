@@ -35,7 +35,7 @@ describe('a BankAccount', () => {
       expect(acceptableAccount.getBalance()).toBe(-250);
     });
 
-    test('should prevent withdrawing with negative funds' , () => {
+    test('should only withdraw when funds are avail' , () => {
       var bankAccount = new BankAccount();
       bankAccount.withdraw(20);
       bankAccount.withdraw(40);
