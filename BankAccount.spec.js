@@ -17,11 +17,10 @@ describe('a BankAccount', () => {
   describe('when withdrawing funds', ()=> {
     test('should allow withdraws', () => {
       var bankAccount = new BankAccount();
-      bankAccount.deposit(32);
       bankAccount.withdraw(8);
 
       expect(BankAccount().withdraw).not.toBeUndefined();
-      expect(bankAccount.getBalance()).toBe(24);
+      expect(bankAccount.getBalance()).toBe(-8);
     });
 
     test('should limit how much can be withdrawn', () => {
