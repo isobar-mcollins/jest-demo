@@ -69,16 +69,3 @@ There are some issues with the withdraw method that can be abused, leading to in
     Business rules:
      - limit to be hardcoded at $500
      - transaction can be approved as long as there are funds in account
-
-
-### Adding fees
-_git:_ [start](https://github.com/isobar-mcollins/jest-demo/tree/feature/lesson-five-start)
-, [end](https://github.com/isobar-mcollins/jest-demo/tree/feature/lesson-five-finish)
-
-    As a business
-    I want to charge customers a fee for withdrawing more money than they have
-    So that we can make more money
-
-    Business rules:
-     - fee to be hardcoded at $64
-     - fee should only be charged once if the withdraw puts balance below $0
