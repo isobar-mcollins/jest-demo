@@ -33,26 +33,15 @@ describe('a BankAccount', () => {
 
       // @todo: catch TransactionError
       expect(deniedAccount.getBalance()).toBe(0);
-      expect(acceptableAccount.getBalance()).toBeLessThan(-250);
+      expect(acceptableAccount.getBalance()).toBe(-250);
     });
 
     test('should only withdraw when funds are avail' , () => {
       var bankAccount = new BankAccount();
       bankAccount.withdraw(20);
+      bankAccount.withdraw(40);
 
-      expect(bankAccount.getBalance()).toBeLessThan(-20);
-
-      // puts into negative so shouldn't withdraw again
-      bankAccount.withdraw(100);
-      expect(bankAccount.getBalance()).not.toBe(-164);
-
-    });
-
-    test('should charge a fee for going into negative funds', () => {
-      var overdrawnAccount = new BankAccount();
-
-      overdrawnAccount.withdraw(100);
-      expect(overdrawnAccount.getBalance()).toBe(-164);
+      expect(bankAccount.getBalance()).toBe(-20);
     });
   });
 
